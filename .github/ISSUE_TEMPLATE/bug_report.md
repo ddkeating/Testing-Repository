@@ -1,38 +1,51 @@
----
 name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
+description: If you're actually looking for support instead, see "I need help / I have a question".
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        :no_entry_sign: If you want to report a security issue, please see [our Security Policy](https://syncthing.net/security/) and do not report the issue here.
 
----
+        :interrobang: If you are not sure if there is a bug, but something isn't working right and you need help, please [use the forum](https://forum.syncthing.net/).
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Also tell us, what did you expect to happen, and any steps we might use to reproduce the problem.
+      placeholder: Tell us what you see!
+    validations:
+      required: true
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+  - type: input
+    id: version
+    attributes:
+      label: Syncthing version
+      description: What version of Syncthing are you running?
+      placeholder: v1.27.4
+    validations:
+      required: true
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+  - type: input
+    id: platform
+    attributes:
+      label: Platform & operating system
+      description: On what platform(s) are you seeing the problem?
+      placeholder: Linux arm64
+    validations:
+      required: true
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+  - type: input
+    id: browser
+    attributes:
+      label: Browser version
+      description: If the problem is related to the GUI, describe your browser and version.
+      placeholder: Safari 17.3.1
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output or crash backtrace. This will be automatically formatted into code, so no need for backticks.
+      render: shell
